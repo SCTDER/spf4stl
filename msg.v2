@@ -1,0 +1,52 @@
+      ver           = 0;        //proto format parse version.
+
+#include "msg.v1"
+
+struct msg(magic=0xffaabb,ver=2){
+
+  
+  //type
+  bool _b;
+  u08 a(0:at_undefined, 1:at_well, 2:at_bad; at_bad);
+  i08 b;
+  u16 c;
+  i16 d;
+  u32 e;
+  i32 f;
+  u64 g;
+  i64 h;
+  float i;
+  double j;
+  string n; //can use vector<char> replace it.
+  
+  ssss s0;
+  u32 o[100];
+
+  struct subst{
+    u32 a;
+    vector<string> v;
+  };
+  
+  //struct
+  vector<u32> va;
+  vector<vector<u32>> vvu;
+  map<u32,map<string,u64>> mmu;
+  deque<u32>  qa;
+  list<u32>   la;
+  set<u32>    sa;
+  list<vector<u32>> lvu;
+  map<u32, string> ma;
+  mset<string> ms;
+  mmap<u32, string> mm;
+  vector<map<string,list<subst>>> ccn;
+  
+  struct ssss{
+    string abc;
+    string arr[100];
+  };
+  vector<ssss> vsss;
+  ssss        s256[256];
+  u32 iga;
+
+  vector<map<u32,map<float,map<string,subst>>>> xxxx;
+};

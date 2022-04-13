@@ -1,0 +1,26 @@
+ver           = 0;        //proto format parse version.
+
+
+struct msg(magic=0xffaabb,ver=0){
+
+  
+  //type
+  bool _b;
+  u08 a(0:undefined, 1:well, 2:bad; undefined);
+  i08 b;
+  u16 c;
+  i16 d;
+  u32 e;
+  i32 f;
+  u64 g;
+  i64 h;
+  
+  struct newstruct{ u32 a; };
+  struct ssss{ u64 b; };
+
+  vector<map<string,deque<newstruct>>> ccn;
+  
+  vector<ssss> vsss;
+  set<u32>   sst;
+  u32 iga;
+};

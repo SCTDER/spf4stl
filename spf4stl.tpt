@@ -1,0 +1,131 @@
+// =====================================================================================
+//
+//       Filename:  generated code from spf4stl for struct auto read/write or transfer from network
+//
+//    Description:  
+//                     code edit with vim and and tw=2, default code is under utf-8.
+//
+//        Version:  $Id$
+//        Created:  <<-dt->>
+//       Revision:  none
+//       Compiler:  modern c/c++ compiler
+//
+//         Author:  someone
+//				Company:  nullcom
+//   Organization:  nullorg
+//
+//				License:  nulllic
+//
+// =====================================================================================
+
+#pragma once
+
+#define _CRT_SECURE_NO_WARNINGS
+
+
+#ifdef _WIN32
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#else
+#include <sys/socket.h>
+#include <sys/fcntl.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <netdb.h>
+#endif
+
+#include <cstdio>
+
+
+
+#include <vector>
+#include <list>
+#include <string>
+#include <set>
+#include <map>
+#include <deque>
+
+template<typename x> using vector = std::vector<x>;
+template<typename x> using list = std::list<x>;
+template<typename x> using set = std::set<x>;
+template<typename x> using deque = std::deque<x>;
+template<typename x, typename y> using map = std::map<x, y>;
+template<typename x> using mset = std::multiset<x>;
+template<typename x, typename y> using mmap = std::multimap<x, y>;
+
+using string = std::string;
+
+
+using u08	= std::uint8_t;
+using u16 = std::uint16_t;
+using u32 = std::uint32_t;
+using u64 = std::uint64_t;
+
+using i08	= std::int8_t;
+using i16 = std::int16_t;
+using i32 = std::int32_t;
+using i64 = std::int64_t;
+
+
+template<typename x> static string as_str(const x& v){ return string((const char*)&v, sizeof(x)); }
+template<typename x> static string as_str(const x* v, size_t c){ return string((const char*)v, sizeof(x) * c); }
+template<> static string as_str(const string& v){
+  u32 z = v.size();
+  return string((const char*)&z, sizeof(z)) + v;
+}
+template<> static string as_str(const string* v, size_t c){
+  string r;
+  for(size_t i = 0; i < c; ++i){
+    u32 z = v[i].size();
+    r += string((const char*)&z, sizeof(z)) + v[i];
+  }
+  return r;
+}
+template<typename x> static size_t as_val(const char* s, x& d){ 
+  memcpy((char*)&d, s, sizeof(x));
+  return sizeof(x);
+}
+template<typename x> static size_t as_val(const char* s, x* d, size_t c){
+  memcpy((char*)d, s, sizeof(x) * c);
+  return sizeof(x) * c;
+}
+template<> static size_t as_val(const char* s, string& d){ 
+  u32 z = *(const u32*)s;
+  d.resize(z);
+  memcpy(d.data(), s + sizeof(u32), z);
+  return z + sizeof(z);
+}
+template<> static size_t as_val(const char* s, string* d, size_t c){
+  size_t r = 0;
+  for(size_t i = 0; i < c; ++i){
+    u32 z = *(const u32*)(s + r);
+    d[i].resize(z);
+    memcpy(d[i].data(), s + r + sizeof(u32), z);
+    r += sizeof(z) + z;
+  }
+  return r;
+}
+
+static string u08hex(u08 v){
+  string r; r.resize(2);
+  sprintf(r.data(), "%02x", v);
+  return r;
+}
+<<-ost->>
+
+struct <<-stname->>_<<-ver->>{
+public:
+<<-cdst->>
+
+<<-substructs->>
+<<-mems->>
+
+<<-pk->>
+<<-uk->>
+
+<<-rcv->>
+};
+
+//almost use the highest version.it is compitable with old version.
+using <<-stname->> = <<-stname->>_<<-ver->>;

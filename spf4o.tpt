@@ -1,0 +1,15 @@
+
+<<-ost->>
+
+struct <<-stname->>_<<-ver->>{
+public:
+<<-cdst->>
+
+<<-substructs->>
+<<-mems->>
+
+<<-pk->>
+<<-uk->>
+
+<<-rcv->>
+};

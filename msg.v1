@@ -1,0 +1,27 @@
+ver           = 0;        //proto format parse version.
+
+#include "msg.v0"
+
+struct msg(magic=0xffaabb,ver=1){
+
+  
+  //type
+  bool _b;
+  u08 a(0:undefined, 1:well, 2:bad; undefined);
+  i08 b;
+  u64 g;
+  i64 h;
+
+  i32 aa;
+  i32 bb;
+  i32 cc;
+  i32 dd;
+  i32 ee;
+  i32 ff;
+
+  struct ssss{ u32 a; };
+  
+  vector<ssss> vsss;
+  set<double>   sst;
+  u32 iga;
+};
