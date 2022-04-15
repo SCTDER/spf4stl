@@ -9,7 +9,7 @@ the tool is a use define a struct like c++, and auto generate serializable code.
 
 ----
 
-# the tools usage is very easy.  
+# the usage is very easy.  
 
 1, download the execute file(spf4stl.exe) and template file(*.tpt, the spf4stl.tpt the main template for generated files.)  
 
@@ -40,7 +40,7 @@ the tool is a use define a struct like c++, and auto generate serializable code.
 
 # the spf's struct  
 
-the spf is sct's potocol format, is a strick format for define exchanged message.it is like a c++ struct, and add a little context.  
+the spf is sct's potocol format, is a strick format for define exchanged message.it is like a c++ struct, and add a little content.  
 
 it use /**/ and // as comment like c++.  
 
@@ -75,6 +75,8 @@ the spf assumpt your will defined diffrent version struct for diffrent progress.
 your can defined as v0,v1,v2..., also you can ignore the version, and only as general serializable tools.
 
 # feature
+the spf store in binary format
+
 the spf support almost c++ basic type,include array and string(except pointer).  
 
 the spf support almost c++ contains(include, vector, list, deque, set, map, multiset, multimap, some contain cant traverse so not support).  
