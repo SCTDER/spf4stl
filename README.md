@@ -9,7 +9,7 @@ the tool is a use define a struct like c++, and auto generate serializable code.
 
 ----
 
-# the usage is very easy.  
+# it is very easy.  
 
 1, download the execute file(spf4stl.exe) and template file(*.tpt, the spf4stl.tpt the main template for generated files.)  
 
